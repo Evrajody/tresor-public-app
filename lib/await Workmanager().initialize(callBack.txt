@@ -1,0 +1,36 @@
+  await Workmanager().initialize(callBack, isInDebugMode: true);
+  await Workmanager().registerPeriodicTask('5', simplePeriodicTask,
+      existingWorkPolicy: ExistingWorkPolicy.replace,
+      frequency: Duration(minutes: 10),
+      initialDelay: Duration(seconds: 5));
+
+      void callbackDispatcher() {
+  Workmanager().executeTask((taskName, inputData) async {
+    var localnotification = new FlutterLocalNotificationsPlugin();
+    localnotification.initialize(
+      InitializationSettings(
+        android: AndroidInitializationSettings('launcher_icon'),
+        iOS: IOSInitializationSettings(),
+      ),
+    );
+
+    var users = await HttpService.fetchedUsers();
+    if (users != null) {
+      notifDisplayer('Votre fiche de paie est disponible', localnotification);
+    } else {
+      print('error');
+    }
+    return Future.value(true);
+  });
+}
+
+await Workmanager().registerPeriodicTask(
+    "Notifier",
+    "Notify update",
+    existingWorkPolicy: ExistingWorkPolicy.replace,
+    inputData: {
+      "link": "https://marinsta.000webhostapp.com/TresorPublic/fetching.php",
+      "signal_Message": "Add",
+      "notification_body": "Votre fiche de paie est disponible"
+    },
+  );

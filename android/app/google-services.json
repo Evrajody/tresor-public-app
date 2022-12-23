@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598600044414",
+    "project_id": "tresor-public-18cc5",
+    "storage_bucket": "tresor-public-18cc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598600044414:android:d62a6e96b61a51fe896d2f",
+        "android_client_info": {
+          "package_name": "com.example.tresor_public"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598600044414-jp4frb4ri8c41u7jh263ltvpcr9b0dkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuKUPkqKLCBRN24lwnfZ4eZ8rvyMS5CuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598600044414-jp4frb4ri8c41u7jh263ltvpcr9b0dkd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
